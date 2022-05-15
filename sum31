@@ -1,0 +1,42 @@
+#Remove duplicate numbers
+
+
+package Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class DulicateValues {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        int a[]=new int[5];
+        System.out.println("ente the values:");
+        for(int i=0;i<a.length;i++){
+            a[i]=s.nextInt();
+        }
+        System.out.println("Before :");
+        System.out.println(Arrays.toString(a));
+        for(int i=0;i<a.length;i++){
+            for(int j=i+1;j<a.length;j++){
+                if(a[i]>=a[j]){
+                    int max=0;
+                    max=a[i];
+                    a[i]=a[j];
+                    a[j]=max;
+                }
+            }
+
+        }
+        System.out.println("after sorting:");
+        System.out.println(Arrays.toString(a));
+        int z=0;
+        int b[]=new int[a.length];
+        for(int i=0;i<a.length-1;i++){
+              if(a[i]!=a[i+1]){
+                  b[z++]=a[i];
+              }
+        }
+        b[z]=a[a.length-1];
+        System.out.println(Arrays.toString(b));
+    }
+}
